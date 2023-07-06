@@ -70,6 +70,22 @@ const LinkedList = () => {
     return curr;
   };
 
+  const pop = () => {
+    if (head === null) return;
+    if (head.next === null) {
+      head = null;
+      return;
+    }
+
+    let curr = head;
+
+    while (curr.next !== null) {
+      if (curr.next.next === null) {
+        curr.next = null;
+      } else curr = curr.next;
+    }
+  };
+
   const _getNewNode = (value) => {
     const node = Node();
     node.setValue(value);
@@ -84,6 +100,7 @@ const LinkedList = () => {
     getHead,
     getTail,
     at,
+    pop,
   };
 };
 
