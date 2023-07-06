@@ -43,6 +43,14 @@ const LinkedList = () => {
 
   const getHead = () => head;
 
+  const getTail = () => {
+    let curr = head;
+
+    for (; curr !== null && curr.next !== null; curr = curr.next);
+
+    return curr;
+  };
+
   const _getNewNode = (value) => {
     const node = Node();
     node.setValue(value);
@@ -55,6 +63,7 @@ const LinkedList = () => {
     prependValue,
     size,
     getHead,
+    getTail,
   };
 };
 
