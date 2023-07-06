@@ -41,6 +41,8 @@ const LinkedList = () => {
     return count;
   };
 
+  const getHead = () => head;
+
   const _getNewNode = (value) => {
     const node = Node();
     node.setValue(value);
@@ -52,6 +54,7 @@ const LinkedList = () => {
     appendValue,
     prependValue,
     size,
+    getHead,
   };
 };
 
