@@ -8,17 +8,10 @@ const Node = () => {
 
   const getValue = () => value;
 
-  const setNext = (node) => {
-    next = node;
-  };
-
-  const getNext = () => next;
-
   return {
     setValue,
-    setNext,
     getValue,
-    getNext,
+    next,
   };
 };
 
