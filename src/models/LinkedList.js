@@ -12,11 +12,9 @@ const LinkedList = () => {
     let curr = head;
 
     while (curr !== null && curr.next !== null) {
-      console.log(curr.getValue());
       curr = curr.next;
     }
 
-    console.log();
     curr.next = _getNewNode(value);
   };
 
