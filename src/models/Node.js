@@ -3,7 +3,7 @@ const Node = () => {
   let next = null;
 
   const setValue = (val) => {
-    value = value;
+    value = val;
   };
 
   const getValue = () => value;
