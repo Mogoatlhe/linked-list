@@ -51,6 +51,25 @@ const LinkedList = () => {
     return curr;
   };
 
+  const at = (index) => {
+    let curr = head;
+    let count = 0;
+
+    if (count > index) return null;
+    if (count === index) return head;
+
+    while (curr !== null && count < index) {
+      curr = curr.next;
+      count += 1;
+
+      if (count === index) {
+        return curr;
+      }
+    }
+
+    return curr;
+  };
+
   const _getNewNode = (value) => {
     const node = Node();
     node.setValue(value);
@@ -64,6 +83,7 @@ const LinkedList = () => {
     size,
     getHead,
     getTail,
+    at,
   };
 };
 
