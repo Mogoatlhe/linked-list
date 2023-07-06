@@ -20,6 +20,17 @@ const LinkedList = () => {
     curr.next = _getNewNode(value);
   };
 
+  const prependValue = (value) => {
+    if (head === null) {
+      head = _getNewNode(value);
+      return;
+    }
+
+    const newNode = _getNewNode(value);
+    newNode.next = head.next;
+    head.next = newNode;
+  };
+
   const _getNewNode = (value) => {
     const node = Node();
     node.setValue(value);
@@ -29,6 +40,7 @@ const LinkedList = () => {
 
   return {
     appendValue,
+    prependValue,
   };
 };
 
