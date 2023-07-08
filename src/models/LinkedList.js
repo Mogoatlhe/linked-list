@@ -162,6 +162,28 @@ const LinkedList = () => {
     prev.next = newNode;
   };
 
+  const removeAt = (index) => {
+    if (index < 0) return;
+    if (head === null) return;
+
+    if (index === 0) {
+      head = head.next;
+      return;
+    }
+
+    let curr = head;
+    let count = 0;
+
+    while (curr !== null) {
+      if (index === count + 1) {
+        if (curr.next !== null) curr.next = curr.next.next;
+        return;
+      }
+      count += 1;
+      curr = curr.next;
+    }
+  };
+
   const _getNewNode = (value) => {
     const node = Node();
     node.setValue(value);
@@ -181,6 +203,7 @@ const LinkedList = () => {
     find,
     toString,
     insertAt,
+    removeAt,
   };
 };
 
