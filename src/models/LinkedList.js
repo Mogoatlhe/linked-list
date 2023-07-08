@@ -86,6 +86,19 @@ const LinkedList = () => {
     }
   };
 
+  const contains = (value) => {
+    if (head === null) return false;
+
+    let curr = head;
+
+    while (curr !== null) {
+      if (curr.getValue() === value) return true;
+      curr = curr.next;
+    }
+
+    return false;
+  };
+
   const _getNewNode = (value) => {
     const node = Node();
     node.setValue(value);
@@ -101,6 +114,7 @@ const LinkedList = () => {
     getTail,
     at,
     pop,
+    contains,
   };
 };
 
