@@ -99,6 +99,21 @@ const LinkedList = () => {
     return false;
   };
 
+  const find = (value) => {
+    if (head === null) return null;
+
+    let curr = head;
+    let count = 0;
+
+    while (curr !== null) {
+      if (curr.getValue() === value) return count;
+      count += 1;
+      curr = curr.next;
+    }
+
+    return null;
+  };
+
   const _getNewNode = (value) => {
     const node = Node();
     node.setValue(value);
@@ -115,6 +130,7 @@ const LinkedList = () => {
     at,
     pop,
     contains,
+    find,
   };
 };
 
