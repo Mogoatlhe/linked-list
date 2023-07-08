@@ -114,6 +114,20 @@ const LinkedList = () => {
     return null;
   };
 
+  const toString = () => {
+    if (head === null) return "null";
+
+    let curr = head;
+    let str = "";
+
+    while (curr !== null) {
+      str += `( ${curr.getValue()} ) -> `;
+      curr = curr.next;
+    }
+
+    return str + "null";
+  };
+
   const _getNewNode = (value) => {
     const node = Node();
     node.setValue(value);
@@ -131,6 +145,7 @@ const LinkedList = () => {
     pop,
     contains,
     find,
+    toString,
   };
 };
 
