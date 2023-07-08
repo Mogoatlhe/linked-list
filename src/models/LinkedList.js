@@ -128,6 +128,40 @@ const LinkedList = () => {
     return str + "null";
   };
 
+  const insertAt = (value, index) => {
+    const newNode = _getNewNode(value);
+
+    if (index < 0) return;
+    if (head === null) {
+      head = newNode;
+      return;
+    }
+
+    if (index === 0) {
+      newNode.next = head;
+      head = newNode;
+      return;
+    }
+
+    let curr = head;
+    let prev = curr;
+    let count = 0;
+
+    while (curr !== null) {
+      if (index === count + 1) {
+        newNode.next = curr.next;
+        curr.next = newNode;
+        return;
+      }
+
+      count += 1;
+      prev = curr;
+      curr = curr.next;
+    }
+
+    prev.next = newNode;
+  };
+
   const _getNewNode = (value) => {
     const node = Node();
     node.setValue(value);
@@ -146,6 +180,7 @@ const LinkedList = () => {
     contains,
     find,
     toString,
+    insertAt,
   };
 };
 
